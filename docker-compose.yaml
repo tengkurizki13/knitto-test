@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=123123
+      - MYSQL_DATABASE=classicmodels
+    ports:
+      - 3306:3306
+    volumes:
+      - contact-manager-mysql-data:/var/lib/mysql
+      - contact-manager-mysql-config:/etc/mysql
+
+volumes:
+  contact-manager-mysql-data:
+  contact-manager-mysql-config:
